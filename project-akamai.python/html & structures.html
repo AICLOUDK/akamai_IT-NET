@@ -1,0 +1,96 @@
+# html structure
+/your-webapp/
+│
+├── /logs/                  
+├── /scripts/                
+│    ├── createdatabase.py
+│    ├── login.py
+│    ├── change_password.py
+│    ├── update_contact.py
+│    ├── process_logs.py
+│    ├── attack_detection.py
+│    └── register_user.py
+├── /resources/              
+├── index.html
+├── contact.html
+├── login.html
+├── change_password.html
+├── update_contact.html
+└── app.py (flask)
+
+
+------------------------
+#index.html
+
+
+
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+
+
+    <h1>Welcome to Our Web App</h1>
+    <nav>
+        <a href="./contact.html">Create Account</a><br>
+        <a href="./login.html">Login</a>
+    </nav>
+
+
+---------------------------------------------
+
+#login.html
+
+
+
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+
+    <h2>Login</h2>
+    <form action="./scripts/login.py" method="post">
+        Username: <input type="text" name="username" required=""><br>
+        Password: <input type="password" name="password" required=""><br>
+        Are you an employee? <input type="checkbox" name="employee"><br>
+        <input type="submit" value="Login">
+    </form>
+
+
+
+---------------------------------------------------------
+#contact
+
+
+
+
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+
+
+    <h2>Create a New Account</h2>
+    <form action="./scripts/register_user.py" method="post">
+        First Name: <input type="text" name="firstName" required=""><br>
+        Last Name: <input type="text" name="lastName" required=""><br>
+        Company Name: <input type="text" name="companyName"><br>
+        Email: <input type="email" name="email" required=""><br>
+        <!-- Add other fields as needed -->
+        <input type="submit" value="Register">
+    </form>
+
+
+
+---------------------------------------------------------
+# change_password
+
+
+
+    <title>Change Password</title>
+
+
+    <h2>Change Password</h2>
+    <form action="change_password.py" method="post">
+        <input type="hidden" name="user" value="{user}">
+        Old Password: <input type="password" name="old_password" required=""><br>
+        New Password: <input type="password" name="new_password" required=""><br>
+        Confirm New Password: <input type="password" name="confirm_password" required=""><br>
+        <input type="submit" value="Change Password">
+    </form>
+    <a href="index.html">Back to Main</a>
